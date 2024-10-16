@@ -42,10 +42,10 @@ body, html {
 /* Keyframes for glowing effect */
 @keyframes glowLogo {
     0% {
-        filter: brightness(1) drop-shadow(0 0 5px rgba(209, 42, 42, 0.5)); /* Subtle glow */
+        filter: brightness(1) drop-shadow(0 0 5px rgba(255, 1, 1, 0.5)); /* Subtle glow */
     }
     100% {
-        filter: brightness(1.5) drop-shadow(0 0 20px rgb(252, 37, 37)); /* Stronger glow */
+        filter: brightness(1.5) drop-shadow(0 0 20px rgb(241, 4, 4)); /* Stronger glow */
     }
 }
 
@@ -162,8 +162,8 @@ body, html {
 }
 
 .hero-image {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-    max-width: 45%; /* Set a max width for the image */
+    flex-shrink: 0; 
+    max-width: 45%; 
 }
 
 .hero-image img {
@@ -190,7 +190,7 @@ body, html {
     background: rgba(7, 7, 7, 0.6);
 }
 .gallery-container {
-    /* padding: 40px; */
+    padding: 40px;
     text-align: center;
 }
 
@@ -339,10 +339,9 @@ body, html {
     }
     
     .scroll-indicator{
-        display: block;
+        display: none;
         margin-bottom: 900px;
         padding-right: 800px;
-        display: flex; /* Enable flexbox */
         align-items: center; /* Vertically align items */
         justify-content: center; /* Horizontally align items, change if needed */
     }
@@ -350,7 +349,7 @@ body, html {
         font-size: 30px;
         color: red; /* Default color */
         padding-top: 100px;
-        display: block;
+        display: none;
     }
     .scroll-indicator.active #scrollIcon {
         display: none;
@@ -358,7 +357,6 @@ body, html {
     #scrollMessage{
         font-size: 16px;
         display: none;
-        
     }
     .hero-content h1 {
         font-size: 36px; /* Adjust font size */
@@ -369,17 +367,15 @@ body, html {
     .title {
         font-size: 24px; 
     }
-    .gallary-container{
+    /* .gallary-container{
         padding: 40px;
-    }
+    } */
     .gallery {
         display: block;
         padding-left: 50px;
         grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
     }
-    .gallary-container{
-        width: 50%;
-    }
+ 
   
     .gallery-item {
         display: inline-block;
@@ -400,17 +396,6 @@ body, html {
     .close{
         color: black;
     }
-    .see-more-btn {
-        font-size: 14px; /* Smaller button text */
-        margin-right: 130px;
-    }
-
-    .modal-content {
-        max-width: 80%; /* Ensure modal content fits on smaller screens */
-        padding-right: 550px;
-        margin-top: 400px;
-    }
-
     .logo img {
         width: 120px; /* Adjust logo size for mobile */
     }
@@ -424,7 +409,7 @@ body, html {
         left: 0;
         top: 0;
         padding-right: 150px;
-        width: 100%; /* Full width */
+        width: 50%; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
         background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
@@ -449,11 +434,11 @@ body, html {
 
     /* Close button */
     .close {
-        color: white;
+        color: black;
         font-size: 30px;
         position: absolute;
         top: 10px;
-        right: 15px;
+        right: 180px;
         cursor: pointer;
     }
 
@@ -467,7 +452,7 @@ body, html {
 
     /* Star rating styles */
     .stars {
-        display: flex;
+        display: none;
         justify-content: center;
         cursor: pointer;
         margin-bottom: 10px;
@@ -482,9 +467,13 @@ body, html {
     .stars span:hover {
         color: orange; /* Highlight color when hovered */
     }
+    .rate-text{
+        display: none;
+    }
 
     /* Input field for the user's name */
     #userName {
+        display: none;
         width: 40%; /* Full width input field */
         padding: 8px;
         font-size: 14px;
@@ -497,6 +486,7 @@ body, html {
 
     /* Submit button */
     #submitRating {
+        display: none;
         padding: 10px 20px;
         font-size: 14px;
         background-color: #007bff;
