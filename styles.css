@@ -190,7 +190,7 @@ body, html {
     background: rgba(7, 7, 7, 0.6);
 }
 .gallery-container {
-    padding: 40px;
+    /* padding: 40px; */
     text-align: center;
 }
 
@@ -369,10 +369,16 @@ body, html {
     .title {
         font-size: 24px; 
     }
-
+    .gallary-container{
+        padding: 40px;
+    }
     .gallery {
         display: block;
+        padding-left: 50px;
         grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+    .gallary-container{
+        width: 50%;
     }
   
     .gallery-item {
@@ -404,9 +410,7 @@ body, html {
         padding-right: 550px;
         margin-top: 400px;
     }
-    .rating-container{
-        padding-right: 500px;
-    }
+
     .logo img {
         width: 120px; /* Adjust logo size for mobile */
     }
