@@ -122,30 +122,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollMessage = document.getElementById("scrollMessage");
     const scrollIndicator = document.querySelector(".scroll-indicator");
 
-    // Prevent scrolling initially
+    // Function to detect mobile devices (screen width less than 768px)
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Show or hide the scroll indicator based on the device
+    function handleScrollIndicator() {
+        if (isMobile()) {
+            scrollIndicator.style.display = "none"; // Hide the indicator on mobile
+        } else {
+            scrollIndicator.style.display = "flex"; // Show the indicator on desktop/laptop
+        }
+    }
+
+    // Call the function when the page loads to check the screen size
+    handleScrollIndicator();
+
+    // Add event listener to resize, in case the window is resized
+    window.addEventListener("resize", handleScrollIndicator);
+
+    // Prevent scrolling initially if the screen is not mobile
     let scrollingAllowed = false;
+    if (!isMobile()) {
+        document.body.style.overflow = "hidden"; // Disable scrolling initially
+    }
 
-    // Show the message when the page loads
-    scrollMessage.style.display = 'block';
-
-    // Add event listener to the scroll icon
+    // Add event listener to the scroll icon for enabling scroll
     scrollIcon.addEventListener("click", function () {
-        // Enable scrolling
-        scrollingAllowed = true;
-
-        // Add the 'active' class to change the icon color to green
-        scrollIndicator.classList.add("active");
-
-        // Hide the message
-        scrollMessage.style.display = 'none';
-
-        // Allow scrolling by changing the body's overflow property
-        document.body.style.overflow = "auto";
+        if (!isMobile()) {
+            // Enable scrolling on non-mobile devices
+            scrollingAllowed = true;
+            scrollIndicator.classList.add("active"); // Change the icon color to green
+            scrollMessage.style.display = "none"; // Hide the scroll message
+            document.body.style.overflow = "auto"; // Allow scrolling
+        }
     });
 
-    // Disable scrolling by preventing default behavior until the eye is clicked
+    // Disable scrolling until the eye icon is clicked (for larger screens)
     window.addEventListener("scroll", function (event) {
-        if (!scrollingAllowed) {
+        if (!scrollingAllowed && !isMobile()) {
             event.preventDefault();
             window.scrollTo(0, 0); // Keep scroll position at the top
         }

@@ -7,7 +7,7 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
 }
 
 .hero-section {
@@ -34,18 +34,18 @@ body, html {
 .logo img {
     width: 150px;
     height: auto;
-    filter: brightness(1); /* Initial brightness */
+    filter: brightness(1); 
     animation: glowLogo 2s ease-in-out infinite alternate;
-    position: relative; /* Position relative so it can move */
-    transition: transform 2.5s ease-out; /* Smooth movement on scroll */
+    position: relative;
+    transition: transform 2.5s ease-out; 
 }
 /* Keyframes for glowing effect */
 @keyframes glowLogo {
     0% {
-        filter: brightness(1) drop-shadow(0 0 5px rgba(255, 1, 1, 0.5)); /* Subtle glow */
+        filter: brightness(1) drop-shadow(0 0 5px rgb(255, 1, 1)); /* Subtle glow */
     }
     100% {
-        filter: brightness(1.5) drop-shadow(0 0 20px rgb(241, 4, 4)); /* Stronger glow */
+        filter: brightness(1.5) drop-shadow(0 0 20px rgb(241, 4, 4)); 
     }
 }
 
@@ -170,15 +170,15 @@ body, html {
     width: 100%; /* Make the image take up full width */
     height: auto;
     padding-top: 200px;
-    filter: brightness(1)  saturate(2); /* Default brightness */
+    filter: brightness(1)  saturate(3); /* Default brightness */
     animation: glowEyes 2s ease-in-out infinite alternate; /* Animate the glow */
 }
 @keyframes glowEyes {
     0% {
-        filter: brightness(1)  saturate(2); /* Normal state */
+        filter: brightness(1)  saturate(3); /* Normal state */
     }
     100% {
-        filter: brightness(2)  saturate(2); /* Glowing state */
+        filter: brightness(2)  saturate(3); /* Glowing state */
     }
 }
 .image-overlay {
@@ -189,6 +189,61 @@ body, html {
     height: 100%;
     background: rgba(7, 7, 7, 0.6);
 }
+/* About Us Section */
+#about-us {
+    background-color: white; 
+    background-size: cover; 
+    background-position: center; 
+    padding: 80px 20px; 
+    color: white; 
+    position: relative 
+    
+}
+
+.spider-image {
+    position: absolute;
+    padding-bottom: 270px;
+    right: 0;
+    bottom: 0;
+    max-width: 300px;
+    opacity: 0.8; /* Slight transparency */
+    z-index: 1; /* Positioned behind the text */
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.about-text {
+    margin-left: 30px;
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    font-family: 'Spooky Webbie';
+    color: black;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: black;
+    line-height: 1.6;
+}
+
 .gallery-container {
     padding: 40px;
     text-align: center;
@@ -327,36 +382,35 @@ body, html {
 }
 /* Responsive adjustments */
 /* Responsive adjustments */
+/* Hide scroll indicator on mobile */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none; /* Hide the scroll indicator on smaller screens */
+    }
+}
+
+/* Show scroll indicator on screens wider than 768px */
+@media (min-width: 769px) {
+    .scroll-indicator {
+        display: flex; /* Show the scroll indicator on larger screens */
+        align-items: center; 
+        justify-content: center;
+    }
+    
+    #scrollMessage {
+        display: block; /* Ensure the message is visible on larger screens */
+    }
+}
+
 @media (max-width: 768px) {
   
     
     .hero-image img {
-        width: 800px;
-        padding-right: 550px;
-        padding-bottom: 100px;
-        overflow: hidden;
-        filter: brightness(0.6); /* Darken the image for better visibility */
-    }
-    
-    .scroll-indicator{
-        display: none;
-        margin-bottom: 900px;
-        padding-right: 800px;
-        align-items: center; /* Vertically align items */
-        justify-content: center; /* Horizontally align items, change if needed */
-    }
-    #scrollIcon {
-        font-size: 30px;
-        color: red; /* Default color */
-        padding-top: 100px;
-        display: none;
-    }
-    .scroll-indicator.active #scrollIcon {
-        display: none;
-    }
-    #scrollMessage{
-        font-size: 16px;
-        display: none;
+        width: 130%; /* Full width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        padding: 0; /* Remove any padding */
+        padding-right: 20px;
+        filter: brightness(0.8); /* Slightly less dark on mobile for better visibility */
     }
     .hero-content h1 {
         font-size: 36px; /* Adjust font size */
@@ -370,24 +424,6 @@ body, html {
     /* .gallary-container{
         padding: 40px;
     } */
-    .gallery {
-        display: block;
-        padding-left: 50px;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
-    }
- 
-  
-    .gallery-item {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 15px; /* Space between rows */
-        padding-right: 65px;
-        overflow: hidden;
-        border-radius: 10px;
-        position: relative;
-        transition: transform 0.3s ease;
-    }
-    
     /* .modal-content {
         max-width: 95%;
         max-height: 90%;
@@ -400,104 +436,89 @@ body, html {
         width: 120px; /* Adjust logo size for mobile */
     }
 }
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .about-us-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+        padding-top: 20px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+    }
+
+    .about-image img {
+        width: 70%;
+    }
+    .spider-image {
+        max-width: 30%; /* Ensure the spider image is not too large */
+        padding-bottom: 190px;
+    }
+}
+
+/* Extra Small Devices (Mobile Phones) */
 @media (max-width: 480px) {
-    /* Modal full screen for mobile */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed;
-        z-index: 1000; /* Sit on top */
-        left: 0;
-        top: 0;
-        padding-right: 150px;
-        width: 50%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    #about-us {
+        padding: 50px 10px;
     }
 
-    /* Modal content (image) */
-    .modal-content {
-        max-width: 90%;
-        max-height: 60%; /* Adjust the size of the image */
-        margin: auto;
-        display: block;
-        border-radius: 10px;
+    .about-text h2 {
+        font-size: 24px;
     }
 
-    /* Caption below the image */
-    .caption {
-        text-align: center;
-        color: white;
-        font-size: 14px;
-        margin-top: 10px;
+    .about-text p {
+        font-size: 13px;
     }
 
-    /* Close button */
-    .close {
-        color: black;
-        font-size: 30px;
-        position: absolute;
-        top: 10px;
-        right: 180px;
-        cursor: pointer;
+    .about-image img {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets/mobile */
+        gap: 15px;
     }
 
-    /* Rating container */
-    .rating-container {
-        margin-top: 15px;
-        text-align: center;
-        color: white;
-        font-size: 14px;
+    .image-caption {
+        font-size: 14px; /* Smaller font for mobile */
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Stack images in a single column on very small screens */
+        gap: 10px;
     }
 
-    /* Star rating styles */
-    .stars {
-        display: none;
-        justify-content: center;
-        cursor: pointer;
+    .image-caption {
+        font-size: 12px; /* Even smaller font for very small screens */
+        padding: 3px;
+    }
+
+    .gallery-container {
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .title {
+        font-size: 18px; /* Smaller title size */
         margin-bottom: 10px;
     }
 
-    .stars span {
-        font-size: 24px; /* Smaller star icons for mobile */
-        margin: 0 5px;
-        color: gold;
-    }
-
-    .stars span:hover {
-        color: orange; /* Highlight color when hovered */
-    }
-    .rate-text{
-        display: none;
-    }
-
-    /* Input field for the user's name */
-    #userName {
-        display: none;
-        width: 40%; /* Full width input field */
-        padding: 8px;
+    .see-more-btn {
         font-size: 14px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        border: none;
-        outline: none;
-        text-align: center;
-    }
-
-    /* Submit button */
-    #submitRating {
-        display: none;
-        padding: 10px 20px;
-        font-size: 14px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    /* Hover effect on submit button */
-    #submitRating:hover {
-        background-color: #0056b3;
+        padding: 8px 16px;
+        margin-top: 20px;
     }
 }
