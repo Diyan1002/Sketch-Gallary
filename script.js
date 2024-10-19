@@ -168,3 +168,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    const name = document.getElementById('clientName').value;
+    const number = document.getElementById('whatsAppNumber').value;
+    const details = document.getElementById('sketchDetails').value;
+
+    // Your WhatsApp number (replace it with your actual WhatsApp number)
+    const yourWhatsAppNumber = '923180731330'; // E.g., '923001234567' for Pakistan (without '+')
+
+    // Construct the WhatsApp message URL
+    const message = `Hi, my name is ${name}. I'd like to order a sketch. Here are the details: ${details}. You can contact me at: ${number}`;
+    const whatsAppURL = `https://wa.me/${yourWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+
+    // Open the WhatsApp chat with the message pre-filled
+    window.open(whatsAppURL, '_blank');
+});

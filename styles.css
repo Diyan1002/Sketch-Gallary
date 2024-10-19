@@ -224,6 +224,7 @@ body, html {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
+
 }
 
 .about-text {
@@ -380,6 +381,155 @@ body, html {
     right: 25px;
     cursor: pointer;
 }
+/* General Horror Theme */
+#order-sketch {
+    /* background-color: #111; */
+    padding: 50px 20px;
+    color: #fff; /* Light text */
+    position: relative;
+    font-family: 'Creepster', cursive; /* Creepy font */
+    text-align: center;
+}
+
+#order-sketch h1 {
+    font-size: 3rem;
+    color: #e63946; /* Blood-red color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for horror effect */
+}
+
+#order-sketch p {
+    font-size: 1.2rem;
+    color: #f1faee; /* Off-white text */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.order-sketch-content {
+    background-color: rgba(255, 0, 0, 0.1); /* Translucent red for blood-like effect */
+    padding: 30px;
+    border: 1px solid #e63946; /* Blood-red border */
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Spider Web Decoration */
+.order-sketch-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 150px;
+    height: 150px;
+    background: url('images/spider-web.png') no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.order-sketch-content::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 150px;
+    height: 150px;
+    background: url('images/spider-web.png') no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.order-sketch-content form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    color: #e63946; /* Blood-red labels */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e63946; /* Blood-red border */
+    background-color: #222; /* Dark input fields */
+    color: #fff;
+    border-radius: 5px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+    font-family: 'Creepster', cursive;
+}
+
+.order-btn {
+    background-color: #e63946; /* Blood-red button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: 'Creepster', cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #b51c29; /* Darker blood red on hover */
+    transform: scale(1.05);
+}
+#footer {
+    background-color: #000; /* Black background */
+    color: #ffffff; /* White text color */
+    padding: 40px 20px; /* Padding for the footer */
+    text-align: center; /* Center text */
+    position: relative; /* Position relative for positioning child elements */
+    overflow: hidden; /* Hide overflow for effects */
+}
+
+.footer-content h3 {
+    font-size: 28px; /* Font size for header */
+    margin-bottom: 10px; /* Space below the header */
+    color: #d9e4e4; /* Neon color for the header */
+    text-shadow: 0 0 5px rgba(204, 41, 41, 0.7), 0 0 10px rgba(219, 35, 97, 0.5); /* Creepy glow effect */
+}
+
+.footer-content p {
+    font-size: 16px; /* Font size for paragraph */
+    margin: 10px 0; /* Space around paragraph */
+}
+
+.social-icons {
+    margin: 20px 0; /* Margin around social icons */
+}
+
+.social-icons a {
+    color: #c4dddd; /* Neon color for icons */
+    margin: 0 15px; /* Space between icons */
+    font-size: 24px; /* Size of icons */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.social-icons a:hover {
+    color: #ff0000; /* Change color on hover */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5); /* Creepy red glow on hover */
+}
+
+#footer p {
+    margin-top: 20px; /* Space above copyright notice */
+    font-size: 14px; /* Font size for copyright notice */
+}
+
 /* Responsive adjustments */
 /* Responsive adjustments */
 /* Hide scroll indicator on mobile */
