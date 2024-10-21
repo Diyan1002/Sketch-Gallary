@@ -186,3 +186,102 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     // Open the WhatsApp chat with the message pre-filled
     window.open(whatsAppURL, '_blank');
 });
+// Add event listener for the toggle button
+document.addEventListener("DOMContentLoaded", function () {
+    const logo = document.getElementById("animated-logo");
+    const overlay = document.getElementById("imageOverlay");
+    const toggleBtn = document.getElementById("toggleOverlayBtn");
+
+    // Add a scroll event listener
+    window.addEventListener('scroll', function () {
+        let scrollPosition = window.scrollY;
+        logo.style.transform = `translateY(${scrollPosition * 1.5}px)`;
+
+        // Optional: Add opacity change for fading effect
+        const maxOpacity = 1;
+        const minOpacity = 0.5;
+        const scrollMax = 300;
+
+        let opacity = maxOpacity - (scrollPosition / scrollMax);
+        opacity = Math.max(minOpacity, opacity);
+        logo.style.opacity = opacity;
+    });
+
+    // Toggle overlay on button click
+    toggleBtn.addEventListener("click", function () {
+        overlay.classList.toggle("active"); // Add or remove the active class
+        if (overlay.classList.contains("active")) {
+            toggleBtn.textContent = "Hide Overlay"; // Change button text
+        } else {
+            toggleBtn.textContent = "Show Overlay"; // Change button text
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Remove active class from all buttons and add to the clicked button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById('imageModal');
+    const fullImage = document.getElementById('fullImage');
+    const caption = document.querySelector('.caption');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const imgSrc = item.getAttribute('data-image');
+            fullImage.src = imgSrc;
+            caption.innerText = item.querySelector('.image-caption').innerText;
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close the modal
+    document.querySelector('.close').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of the image
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+// // Disable right-click
+// document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+// function ctrlShiftKey(e, keyCode) {
+//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+// }
+
+// document.onkeydown = (e) => {
+//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+//   if (
+//     event.keyCode === 123 ||
+//     ctrlShiftKey(e, 'I') ||
+//     ctrlShiftKey(e, 'J') ||
+//     ctrlShiftKey(e, 'C') ||
+//     (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+//   )
+//     return false;
+// };
+

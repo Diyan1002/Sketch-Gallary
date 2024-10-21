@@ -11,12 +11,12 @@ body, html {
 }
 
 .hero-section {
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Space between text and image */
-    align-items: center; /* Vertically center */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     height: 100vh;
     position: relative;
-    padding: 0 5%; /* Add some horizontal padding */
+    padding: 0 5%; 
     color: whitesmoke;
 }
 
@@ -42,13 +42,89 @@ body, html {
 /* Keyframes for glowing effect */
 @keyframes glowLogo {
     0% {
-        filter: brightness(1) drop-shadow(0 0 5px rgb(255, 1, 1)); /* Subtle glow */
+        filter: brightness(1) drop-shadow(0 0 5px rgb(255, 1, 1)); 
     }
     100% {
         filter: brightness(1.5) drop-shadow(0 0 20px rgb(241, 4, 4)); 
     }
 }
+/* Right-Side Menu Bar Styling */
+.menu-toggle {
+    top: 20px;
+    cursor: pointer; 
+}
+.menu-toggle:hover {
+    right: 0; 
+}
+.side-menu {
+    position: fixed;
+    right: -150px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #660000;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px 0 0 10px;
+    transition: right 0.3s ease; 
+}
 
+.side-menu:hover {
+    right: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 15px 0;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+    background-color: #ff4d4d;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .side-menu {
+        display: none;
+    }
+}
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
 .menu-icon {
     position: absolute;
     top: 20px;
@@ -58,7 +134,7 @@ body, html {
 }
 
 .hero-content {
-    max-width: 50%; /* Set max width for text */
+    max-width: 50%; 
 }
 
 .hero-content h2 {
@@ -66,59 +142,59 @@ body, html {
     letter-spacing: 2px;
 }
 .word {
-    opacity: 0; /* Initially hidden */
-    display: inline-block; /* Treat each word like a block for separate animation */
+    opacity: 0; 
+    display: inline-block; 
     font-size: 56px;
     font-weight: bold;
     letter-spacing: 2px;
-    color: whitesmoke; /* Normal text color */
+    color: whitesmoke;
     animation: fadeInWord 1s forwards, shineEffect 2s 1.5s linear forwards; /* Shine effect after fade in */
     background: linear-gradient(90deg, rgba(160, 28, 28, 0.308) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(160, 28, 28, 0.308) 100%);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent; /* Hide text color during shine */
+    color: transparent; 
 }
 
 .word:nth-child(1) {
-    animation-delay: 0.5s, 2.5s; /* Delay shine for the first word */
+    animation-delay: 0.5s, 2.5s; 
 }
 
 .word:nth-child(2) {
-    animation-delay: 1s, 3s; /* Delay shine for the second word */
+    animation-delay: 1s, 3s;
 }
 
 .word:nth-child(3) {
-    animation-delay: 1.5s, 3.5s; /* Delay shine for the third word */
+    animation-delay: 1.5s, 3.5s; 
 }
 
 .word:nth-child(4) {
-    animation-delay: 2s, 4s; /* Delay shine for the fourth word */
+    animation-delay: 2s, 4s;
 }
 
 @keyframes fadeInWord {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Move up slightly */
+        transform: translateY(20px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Natural position */
+        transform: translateY(0); 
     }
 }
 
 @keyframes shineEffect {
     0% {
-        background-position: 200%; /* Start the shine from right */
-        color: transparent; /* While shining, hide normal text color */
+        background-position: 200%;
+        color: transparent; 
     }
     50% {
-        background-position: 0%; /* Shine moves to the left */
-        color: transparent; /* Keep text transparent during shine */
+        background-position: 0%;
+        color: transparent; 
     }
     100% {
-        background-position: 0%; /* End position */
-        color: whitesmoke; /* Return to original text color */
+        background-position: 0%; 
+        color: whitesmoke; 
     }
 }
 
@@ -146,7 +222,7 @@ body, html {
 
 #scrollIcon {
     font-size: 30px;
-    color: red; /* Default color */
+    color: red; 
     transition: color 0.3s ease;
 }
 
@@ -156,7 +232,6 @@ body, html {
     color: white;
 }
 
-/* When icon is clicked and scrolling is allowed */
 .scroll-indicator.active #scrollIcon {
     color: green;
 }
@@ -167,18 +242,18 @@ body, html {
 }
 
 .hero-image img {
-    width: 100%; /* Make the image take up full width */
+    width: 100%; 
     height: auto;
     padding-top: 200px;
-    filter: brightness(1)  saturate(3); /* Default brightness */
-    animation: glowEyes 2s ease-in-out infinite alternate; /* Animate the glow */
+    filter: brightness(1)  saturate(3); 
+    animation: glowEyes 2s ease-in-out infinite alternate; 
 }
 @keyframes glowEyes {
     0% {
-        filter: brightness(1)  saturate(3); /* Normal state */
+        filter: brightness(1)  saturate(3);
     }
     100% {
-        filter: brightness(2)  saturate(3); /* Glowing state */
+        filter: brightness(2)  saturate(3);
     }
 }
 .image-overlay {
@@ -187,8 +262,43 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(7, 7, 7, 0.6); */
+    background: rgba(7, 7, 7, 0.6);
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    pointer-events: none;
 }
+
+.image-overlay.active {
+    opacity: 1; 
+    pointer-events: auto; 
+}
+
+.toggle-overlay-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #af4c4c, #df0c16); 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 25px; 
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease; 
+}
+
+.toggle-overlay-btn:hover {
+    background: linear-gradient(45deg, #ff415b, #b61010);
+}
+
+
+
+.toggle-overlay-btn:hover {
+    background-color: #4caf50; 
+    color: white; 
+}
+
 /* About Us Section */
 #about-us {
     background-color: white; 
@@ -206,8 +316,8 @@ body, html {
     right: 0;
     bottom: 0;
     max-width: 300px;
-    opacity: 0.8; /* Slight transparency */
-    z-index: 1; /* Positioned behind the text */
+    opacity: 0.8; 
+    z-index: 1; 
 }
 
 .about-us-content {
@@ -244,7 +354,28 @@ body, html {
     color: black;
     line-height: 1.6;
 }
+.filter-buttons {
+    margin: 20px 0; /* Space above and below the filter buttons */
+}
 
+.filter-button {
+    background-color: #ff4d4d; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for better click area */
+    cursor: pointer; /* Pointer on hover */
+    margin: 0 5px; /* Space between buttons */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+
+.filter-button:hover {
+    background-color: #b30000; /* Darken on hover */
+}
+
+.filter-button.active {
+    background-color: #b30000; /* Active button color */
+}
 .gallery-container {
     padding: 40px;
     text-align: center;
@@ -255,6 +386,11 @@ body, html {
     letter-spacing: 2px;
     margin-bottom: 30px;
 }
+/* .gallery-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #1a1a1a; 
+} */
 
 .gallery {
     display: grid;
@@ -286,19 +422,19 @@ body, html {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.6); 
     color: white;
     padding: 10px;
     text-align: center;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(100%); /* Hide caption below the image */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0;
+    transform: translateY(100%); 
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Show the caption on hover */
 .gallery-item:hover .image-caption {
     opacity: 1;
-    transform: translateY(0); /* Slide the caption into view */
+    transform: translateY(0);
 }
 .gallery-item::before {
     content: '';
@@ -333,15 +469,15 @@ body, html {
     background-color: #0056b3;
 }
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 1000; /* Sit on top */
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
 }
 
 .modal-content {
@@ -370,7 +506,7 @@ body, html {
 }
 
 .stars span:hover {
-    color: orange; /* Highlight on hover */
+    color: orange;
 }
 
 .close {
@@ -385,29 +521,29 @@ body, html {
 #order-sketch {
     /* background-color: #111; */
     padding: 50px 20px;
-    color: #fff; /* Light text */
+    color: #fff; 
     position: relative;
-    font-family: 'Creepster', cursive; /* Creepy font */
+    font-family: 'Creepster', cursive; 
     text-align: center;
 }
 
 #order-sketch h1 {
     font-size: 3rem;
-    color: #e63946; /* Blood-red color */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for horror effect */
+    color: #e63946; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 #order-sketch p {
     font-size: 1.2rem;
-    color: #f1faee; /* Off-white text */
+    color: #f1faee; 
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .order-sketch-content {
-    background-color: rgba(255, 0, 0, 0.1); /* Translucent red for blood-like effect */
+    background-color: rgba(255, 0, 0, 0.1); 
     padding: 30px;
-    border: 1px solid #e63946; /* Blood-red border */
+    border: 1px solid #e63946;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
@@ -449,7 +585,7 @@ body, html {
 
 .form-group label {
     font-size: 1.2rem;
-    color: #e63946; /* Blood-red labels */
+    color: #e63946;
     display: block;
     margin-bottom: 5px;
 }
@@ -458,8 +594,8 @@ body, html {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #e63946; /* Blood-red border */
-    background-color: #222; /* Dark input fields */
+    border: 1px solid #e63946; 
+    background-color: #222; 
     color: #fff;
     border-radius: 5px;
 }
@@ -471,7 +607,7 @@ body, html {
 }
 
 .order-btn {
-    background-color: #e63946; /* Blood-red button */
+    background-color: #e63946; 
     color: white;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -485,49 +621,49 @@ body, html {
 }
 
 .order-btn:hover {
-    background-color: #b51c29; /* Darker blood red on hover */
+    background-color: #b51c29; 
     transform: scale(1.05);
 }
 #footer {
-    background-color: #000; /* Black background */
-    color: #ffffff; /* White text color */
-    padding: 40px 20px; /* Padding for the footer */
-    text-align: center; /* Center text */
-    position: relative; /* Position relative for positioning child elements */
-    overflow: hidden; /* Hide overflow for effects */
+    background-color: #000;
+    color: #ffffff;
+    padding: 40px 20px; 
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
 }
 
 .footer-content h3 {
-    font-size: 28px; /* Font size for header */
-    margin-bottom: 10px; /* Space below the header */
-    color: #d9e4e4; /* Neon color for the header */
-    text-shadow: 0 0 5px rgba(204, 41, 41, 0.7), 0 0 10px rgba(219, 35, 97, 0.5); /* Creepy glow effect */
+    font-size: 28px; 
+    margin-bottom: 10px; 
+    color: #d9e4e4; 
+    text-shadow: 0 0 5px rgba(204, 41, 41, 0.7), 0 0 10px rgba(219, 35, 97, 0.5);
 }
 
 .footer-content p {
-    font-size: 16px; /* Font size for paragraph */
-    margin: 10px 0; /* Space around paragraph */
+    font-size: 16px; 
+    margin: 10px 0; 
 }
 
 .social-icons {
-    margin: 20px 0; /* Margin around social icons */
+    margin: 20px 0; 
 }
 
 .social-icons a {
-    color: #c4dddd; /* Neon color for icons */
-    margin: 0 15px; /* Space between icons */
-    font-size: 24px; /* Size of icons */
-    transition: color 0.3s ease; /* Smooth transition for hover */
+    color: #c4dddd; 
+    margin: 0 15px; 
+    font-size: 24px;
+    transition: color 0.3s ease; 
 }
 
 .social-icons a:hover {
-    color: #ff0000; /* Change color on hover */
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5); /* Creepy red glow on hover */
+    color: #ff0000; 
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5); 
 }
 
 #footer p {
-    margin-top: 20px; /* Space above copyright notice */
-    font-size: 14px; /* Font size for copyright notice */
+    margin-top: 20px; 
+    font-size: 14px; 
 }
 
 /* Responsive adjustments */
@@ -535,20 +671,20 @@ body, html {
 /* Hide scroll indicator on mobile */
 @media (max-width: 768px) {
     .scroll-indicator {
-        display: none; /* Hide the scroll indicator on smaller screens */
+        display: none; 
     }
 }
 
 /* Show scroll indicator on screens wider than 768px */
 @media (min-width: 769px) {
     .scroll-indicator {
-        display: flex; /* Show the scroll indicator on larger screens */
+        display: flex; 
         align-items: center; 
         justify-content: center;
     }
     
     #scrollMessage {
-        display: block; /* Ensure the message is visible on larger screens */
+        display: block; 
     }
 }
 
@@ -556,16 +692,16 @@ body, html {
   
     
     .hero-image img {
-        width: 130%; /* Full width for mobile */
-        height: auto; /* Maintain aspect ratio */
-        padding: 0; /* Remove any padding */
+        width: 130%; 
+        height: auto; 
+        padding: 0; 
         padding-right: 20px;
         filter: brightness(0.8); /* Slightly less dark on mobile for better visibility */
     }
     .hero-content h1 {
         font-size: 36px; /* Adjust font size */
         margin-top: 40px;
-        z-index: 3; /* Ensure it's above the image */
+        z-index: 3; 
     }
     .hero-content h2 h1{
         color: white;
@@ -589,6 +725,7 @@ body, html {
         width: 120px; /* Adjust logo size for mobile */
     }
 }
+
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     .about-us-content {
@@ -645,7 +782,7 @@ body, html {
     }
 
     .image-caption {
-        font-size: 14px; /* Smaller font for mobile */
+        font-size: 14px; 
         padding: 4px;
     }
 }
@@ -674,5 +811,17 @@ body, html {
         font-size: 14px;
         padding: 8px 16px;
         margin-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .filter-buttons {
+        display: flex;
+        flex-direction: row; /* Stack buttons vertically on small screens */
+        align-items: center; 
+    }
+
+    .filter-button {
+        width: 25%; 
+
     }
 }

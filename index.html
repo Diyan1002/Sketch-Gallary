@@ -17,8 +17,20 @@
                 <img src="images/logo.png" alt="Logo" id="animated-logo" class="animated-logo">
             </div>
         </nav>
+        <nav class="side-menu">
+            <div class="menu-toggle">
+                <i class="fas fa-chevron-left" id="toggleArrow"></i> <!-- Arrow Icon -->
+            </div>
+            <ul>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#gallery-container">Gallery</a></li>
+                <li><a href="#order-sketch">Order Sketch</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
 
-        <div class="hero-content">
+        <div class="hero-content" id="hero-section">
             <h2>Welcome to</h2>
             <h1>
                 <span class="word">Art</span>
@@ -37,7 +49,14 @@
             <img src="images/spider.png" alt="Art Image"> <!-- Your image goes here -->
         </div>
 
-        <div class="image-overlay"></div>
+        <div class="image-overlay" id="imageOverlay"></div>
+    
+        <!-- Toggle Button -->
+        <!-- Toggle Button with Icon -->
+<button id="toggleOverlayBtn" class="toggle-overlay-btn">
+    <i class="fas fa-eye"></i> <!-- Font Awesome eye icon -->
+</button>
+
     </div>
     <!-- About Us Section -->
     <section id="about-us">
@@ -56,14 +75,22 @@
             <img src="images/spi1.png" alt="Spider Image" class="spider-image">
         </div>
     </section>
-    <div class="gallery-container">
-        <h1 class="title">Visual Storytelling Expert</h1>
+    <div class="gallery-container" id="gallery-container">
+        <h1 class="title">Art Gallery: A Visual Journey</h1>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="portraits">Portraits</button>
+            <button class="filter-button" data-filter="landscapes">Landscapes</button>
+            <button class="filter-button" data-filter="abstract">Abstract</button>
+        </div>
         <div class="gallery">
             <div class="gallery-item" data-image="images/pic1.jpg">
                 <img src="images/pic1.jpg" alt="Image 1">
                 <div class="image-caption">Messi</div>
             </div>
-            <div class="gallery-item" data-image="images/pic2.jpg">
+            <div class="gallery-item" data-image="images/pic2.jpg" data-category="portraits">
                 <img src="images/pic2.jpg" alt="Image 2">
                 <div class="image-caption">Abstract</div>
             </div>
