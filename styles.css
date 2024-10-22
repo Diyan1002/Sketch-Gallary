@@ -76,7 +76,6 @@ body, html {
     list-style: none;
     padding: 0;
 }
-
 .side-menu ul li {
     margin: 15px 0;
 }
@@ -97,7 +96,18 @@ body, html {
 }
 @media (max-width: 768px) {
     .side-menu {
-        display: none;
+        display: block;
+    }
+    .side-menu {
+        position: fixed;
+        right: -170px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(102, 0, 0, 0.7); /* Dark red with 70% opacity */
+        padding: 20px;
+        z-index: 1000;
+        border-radius: 10px 0 0 10px;
+        transition: right 0.3s ease;
     }
 }
 /* Menu Icon */
@@ -682,7 +692,7 @@ body, html {
         align-items: center; 
         justify-content: center;
     }
-    
+
     #scrollMessage {
         display: block; 
     }
