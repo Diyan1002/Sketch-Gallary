@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Prevent scrolling initially if the screen is not mobile
     let scrollingAllowed = false;
     if (!isMobile()) {
-        document.body.style.overflow = "hidden"; // Disable scrolling initially
+        document.body.style.overflow = "hidden"; 
     }
 
     // Add event listener to the scroll icon for enabling scroll
@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Enable scrolling on non-mobile devices
             scrollingAllowed = true;
             scrollIndicator.classList.add("active"); // Change the icon color to green
-            scrollMessage.style.display = "none"; // Hide the scroll message
-            document.body.style.overflow = "auto"; // Allow scrolling
+            scrollMessage.style.display = "none";
+            document.body.style.overflow = "auto"; 
         }
     });
 
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function (event) {
         if (!scrollingAllowed && !isMobile()) {
             event.preventDefault();
-            window.scrollTo(0, 0); // Keep scroll position at the top
+            window.scrollTo(0, 0); 
         }
     });
 });
@@ -209,11 +209,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle overlay on button click
     toggleBtn.addEventListener("click", function () {
-        overlay.classList.toggle("active"); // Add or remove the active class
+        overlay.classList.toggle("active"); 
         if (overlay.classList.contains("active")) {
-            toggleBtn.textContent = "Hide Overlay"; // Change button text
+            toggleBtn.textContent = "Hide Overlay"; 
         } else {
-            toggleBtn.textContent = "Show Overlay"; // Change button text
+            toggleBtn.textContent = "Show Overlay"; 
         }
     });
 });
@@ -233,7 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.display = 'none';
                 }
             });
-
             // Remove active class from all buttons and add to the clicked button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
@@ -266,22 +265,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// // Disable right-click
-// document.addEventListener('contextmenu', (e) => e.preventDefault());
+// Disable right-click
+document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-// function ctrlShiftKey(e, keyCode) {
-//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-// }
+function ctrlShiftKey(e, keyCode) {
+  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+}
 
-// document.onkeydown = (e) => {
-//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-//   if (
-//     event.keyCode === 123 ||
-//     ctrlShiftKey(e, 'I') ||
-//     ctrlShiftKey(e, 'J') ||
-//     ctrlShiftKey(e, 'C') ||
-//     (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-//   )
-//     return false;
-// };
-
+document.onkeydown = (e) => {
+  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+  if (
+    event.keyCode === 123 ||
+    ctrlShiftKey(e, 'I') ||
+    ctrlShiftKey(e, 'J') ||
+    ctrlShiftKey(e, 'C') ||
+    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+  )
+    return false;
+};
