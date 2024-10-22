@@ -100,7 +100,7 @@ body, html {
     }
     .side-menu {
         position: fixed;
-        right: -170px;
+        right: -160px;
         top: 50%;
         transform: translateY(-50%);
         background-color: rgba(102, 0, 0, 0.7); /* Dark red with 70% opacity */
@@ -108,6 +108,9 @@ body, html {
         z-index: 1000;
         border-radius: 10px 0 0 10px;
         transition: right 0.3s ease;
+    }
+    .menu-toggle i {
+        display: none; /* This hides the arrow icon */
     }
 }
 /* Menu Icon */
